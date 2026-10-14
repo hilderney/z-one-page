@@ -11,7 +11,7 @@ Landing page estática da **z-one** (serviços de TI e automação com IA), publ
 - Atuação (produtos e automação com IA, z-team / MCP)
 - Instagram [@zeedashone](https://www.instagram.com/zeedashone/)
 
-Arquivos estáticos: `index.html`, `css/`, `js/`, `public/assets/` (logotipo oficial em `z-one-oficial-regua.png` e variantes SVG).
+Arquivos estáticos: `index.html`, `css/`, `js/`, `public/assets/` (`z-one-oficial-regua.png` no hero; `z-one-oficial-original.png` para favicon e compartilhamento).
 
 ## Rodar localmente
 
