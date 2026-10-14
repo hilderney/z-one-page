@@ -1,14 +1,14 @@
 /* z-one institutional — near-black, off-white, red accent */
 
 :root {
-  --bg: #0a0a0b;
-  --bg-elevated: #111113;
-  --bg-alt: #0e0e10;
-  --text: #ece8df;
+  --bg: #0b0b0b;
+  --bg-elevated: #101010;
+  --bg-alt: #0d0d0d;
+  --text: #f0ebe3;
   --text-muted: #9a968d;
   --line: rgba(236, 232, 223, 0.18);
   --line-strong: rgba(236, 232, 223, 0.35);
-  --accent: #c41e24;
+  --accent: #c8161c;
   --font-sans: "Syne", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --container: min(1120px, 92vw);
@@ -108,6 +108,12 @@ a:focus-visible {
 
 .brand-text {
   font-size: 1.1rem;
+}
+
+.brand-mark {
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 2px;
 }
 
 .site-nav ul {
