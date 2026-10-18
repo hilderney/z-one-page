@@ -450,6 +450,11 @@ a:focus-visible {
 }
 
 /* Contact */
+.contact-intro {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
 .contact-list {
   list-style: none;
   margin: 0;
@@ -461,8 +466,27 @@ a:focus-visible {
 .contact-list li {
   display: grid;
   gap: 0.35rem;
-  padding-bottom: 1.25rem;
+  padding: 0 0 1.25rem 0.85rem;
   border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
+  transition: transform 0.15s ease;
+}
+
+.contact-list li:hover {
+  border-left-color: var(--accent);
+}
+
+.contact-list li:active {
+  transform: translateY(1px);
+}
+
+.ficha {
+  display: none;
+}
+
+.ficha:target {
+  display: block;
+  margin-top: 1.5rem;
 }
 
 .contact-label {
