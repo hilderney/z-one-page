@@ -5,6 +5,7 @@
   --bg-elevated: #101010;
   --bg-alt: #0d0d0d;
   --text: #f0ebe3;
+  --text-body: #aea99f;
   --text-muted: #9a968d;
   --line: rgba(236, 232, 223, 0.18);
   --line-strong: rgba(236, 232, 223, 0.35);
@@ -13,6 +14,9 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --container: min(1120px, 92vw);
   --header-h: 4.5rem;
+  --header-stack: calc(var(--header-h) + 1.25rem);
+  --motion-duration: 0.15s;
+  --motion-ease: ease;
 }
 
 *,
@@ -23,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-stack);
 }
 
 body {
@@ -50,6 +55,14 @@ a {
 a:hover,
 a:focus-visible {
   color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .mono {
@@ -239,8 +252,8 @@ a:focus-visible {
 }
 
 .hero-lead {
-  color: var(--text-muted);
-  max-width: 36ch;
+  color: var(--text-body);
+  max-width: 42ch;
   margin: 0 0 2rem;
 }
 
@@ -265,13 +278,20 @@ a:focus-visible {
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid var(--line-strong);
-  transition: background 0.15s, border-color 0.15s;
+  transition: background var(--motion-duration) var(--motion-ease),
+    border-color var(--motion-duration) var(--motion-ease),
+    transform var(--motion-duration) var(--motion-ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn--primary {
   background: var(--text);
   color: var(--bg);
   border-color: var(--text);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 .btn--primary:hover,
@@ -333,7 +353,7 @@ a:focus-visible {
 
 .prose {
   max-width: 62ch;
-  color: var(--text-muted);
+  color: var(--text-body);
 }
 
 .prose p {
@@ -365,12 +385,34 @@ a:focus-visible {
 }
 
 .card {
+  position: relative;
   background: var(--bg-elevated);
   padding: 1.5rem 1.35rem 1.75rem;
   min-height: 9rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: transparent;
+}
+
+.card:hover,
+.card:focus-within {
+  background: #161616;
+}
+
+.card:hover::before,
+.card:focus-within::before,
+.card--highlight::before {
+  background: var(--accent);
 }
 
 .card-kind {
@@ -391,7 +433,7 @@ a:focus-visible {
 
 .co-criacao {
   margin: 1.5rem 0 0;
-  color: var(--text-muted);
+  color: var(--text-body);
   font-size: 0.95rem;
 }
 
@@ -431,7 +473,7 @@ a:focus-visible {
 }
 
 .card--highlight {
-  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
 }
 
 .card--soon {
@@ -452,7 +494,7 @@ a:focus-visible {
 /* Contact */
 .contact-intro {
   margin: 0 0 1.5rem;
-  color: var(--text-muted);
+  color: var(--text-body);
 }
 
 .contact-list {
@@ -469,7 +511,7 @@ a:focus-visible {
   padding: 0 0 1.25rem 0.85rem;
   border-bottom: 1px solid var(--line);
   border-left: 2px solid transparent;
-  transition: transform 0.15s ease;
+  transition: transform var(--motion-duration) var(--motion-ease);
 }
 
 .contact-list li:hover {
@@ -614,5 +656,20 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+  .btn--primary {
+    box-shadow: none;
+  }
+
+  .btn:active,
+  .contact-list li:active {
+    transform: none;
   }
 }
