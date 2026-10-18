@@ -59,8 +59,8 @@
         <nav id="menu-principal" class="site-nav" data-nav>
           <ul>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#servicos">Atuação</a></li>
+            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
@@ -68,8 +68,8 @@
       <div class="header-ruler" aria-hidden="true">
         <span class="ruler-tick"></span>
         <span class="ruler-accent"></span>
-        <span class="ruler-label ruler-label--left">00</span>
-        <span class="ruler-label ruler-label--right">SYS 01</span>
+        <span class="ruler-label ruler-label--left" data-ruler-left>00</span>
+        <span class="ruler-label ruler-label--right" data-ruler-right></span>
       </div>
     </header>
 
@@ -92,16 +92,17 @@
               orientados por IA
             </h1>
             <p class="hero-lead">
-              A <strong>z-one</strong> desenvolve produtos digitais e fluxos automatizados,
-              unindo engenharia de software e agentes de IA — com o time
-              <span class="mono">z-team</span> orquestrado via MCP.
+              A <strong>z-one</strong> entrega sistemas e automações sob medida para empresas,
+              do desenho da rotina até a ferramenta em uso.
             </p>
             <div class="hero-actions">
-              <a class="btn btn--primary" href="#projetos">Ver projetos</a>
-              <a class="btn btn--ghost" href="https://www.instagram.com/zeedashone/" rel="noopener noreferrer"
-                >Instagram</a
-              >
+              <a class="btn btn--primary" href="#contato">Falar com a z-one</a>
+              <a class="btn btn--ghost" href="#projetos">Ver projetos</a>
             </div>
+            <p class="hero-links">
+              <a href="#projeto-z-team">z-team</a>
+              <a href="#projeto-devotio">Devotio</a>
+            </p>
           </div>
         </div>
         <div class="hero-grid-lines" aria-hidden="true"></div>
@@ -116,14 +117,45 @@
           <div class="prose">
             <p>
               A z-one é uma empresa de serviços de tecnologia da informação e automação
-              com inteligência artificial, liderada por Hil Zapf (Hilderney). O foco é
-              construir software e processos que conectam pessoas, dados e sistemas —
-              com precisão de engenharia e linguagem visual minimalista.
+              com inteligência artificial, liderada por Hil Zapf (Hilderney).
             </p>
             <p>
-              Projetos e conteúdo são coordenados em um espaço de trabalho unificado;
-              o desenvolvimento com agentes é conduzido pelo <strong>z-team</strong>,
-              com observabilidade e protocolo MCP (Model Context Protocol).
+              Um trabalho começa por conversa, especificação e ciclos, até o sistema
+              estar em uso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-id mono">02</span>
+            <h2>Atuação</h2>
+          </div>
+          <div class="prose">
+            <p>
+              A z-one pega uma rotina da empresa — atendimento, operação, um processo
+              que ainda vive em planilha — e entrega o sistema que passa a fazer esse
+              trabalho.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <a href="#projeto-devotio">Software</a> sob medida para a rotina que a
+                empresa já tem
+              </li>
+              <li>Automação de um fluxo que hoje se repete à mão</li>
+              <li>
+                <a href="#projeto-z-team">Orquestração</a> de quem desenha, constrói e
+                revisa esse sistema
+              </li>
+            </ul>
+            <p>
+              Um pedido repetido no WhatsApp, uma planilha de comissão, um estoque que
+              não fecha.
+            </p>
+            <p>
+              <a class="btn btn--primary" href="#contato">Falar com a z-one</a>
             </p>
           </div>
         </div>
@@ -132,71 +164,89 @@
       <section id="projetos" class="section section--alt">
         <div class="container">
           <div class="section-head">
-            <span class="section-id mono">02</span>
+            <span class="section-id mono">03</span>
             <h2>Projetos</h2>
           </div>
           <ul class="card-grid">
-            <li class="card">
-              <h3>Devotio</h3>
-              <p>Aplicativo devocional em desenvolvimento.</p>
-            </li>
-            <li class="card">
-              <h3>Pac-Man game</h3>
-              <p>Projeto de jogo.</p>
-            </li>
-            <li class="card">
-              <h3>Ikarus <span class="card-sub">Eternal Horizon</span></h3>
-              <p>Webgame 3D em desenvolvimento.</p>
-            </li>
-            <li class="card">
-              <h3>Cubu Dash</h3>
-              <p>Jogo desenvolvido com Godot.</p>
-            </li>
-            <li class="card card--highlight">
+            <li class="card card--highlight" id="projeto-z-team">
+              <span class="card-kind">Ferramenta própria</span>
               <h3>z-team</h3>
               <p>
-                Time de desenvolvimento com IA orquestrado via MCP, com observabilidade
-                dos fluxos de agentes.
+                Time de agentes que especifica, constrói e revisa o software e deixa
+                registro do que cada um fez. Esse registro passa por MCP.
               </p>
               <a
                 class="card-link mono"
-                href="https://github.com/hilderney/dev-team-orchestrator-mcp"
+                href="https://github.com/zee-dash-one/dev-team-orchestrator-mcp"
+                title="https://github.com/zee-dash-one/dev-team-orchestrator-mcp"
+                aria-label="Repositório do z-team: https://github.com/zee-dash-one/dev-team-orchestrator-mcp"
                 rel="noopener noreferrer"
-                >github.com/hilderney/dev-team-orchestrator-mcp</a
+                >Repositório</a
               >
             </li>
-            <li class="card card--soon">
-              <span class="badge">Em breve</span>
-              <h3>Bellspretty</h3>
-              <p>Projeto co-criado — detalhes em breve.</p>
-            </li>
-            <li class="card card--soon">
-              <span class="badge">Em breve</span>
-              <h3>Homeschooling</h3>
-              <p class="card-sub">Maya Home Schooling — projeto co-criado.</p>
+            <li class="card" id="projeto-devotio">
+              <span class="card-kind">Produto próprio</span>
+              <h3>Devotio</h3>
+              <p>
+                Espaço calmo para ler a Palavra, meditar e orar. App devocional
+                minimalista, com Bíblia AA e comunidades.
+              </p>
+              <a
+                class="card-link mono"
+                href="https://github.com/zee-dash-one/devotio"
+                title="https://github.com/zee-dash-one/devotio"
+                aria-label="Repositório do Devotio: https://github.com/zee-dash-one/devotio"
+                rel="noopener noreferrer"
+                >Repositório</a
+              >
             </li>
           </ul>
-        </div>
-      </section>
-
-      <section id="servicos" class="section">
-        <div class="container">
-          <div class="section-head">
-            <span class="section-id mono">03</span>
-            <h2>Atuação</h2>
-          </div>
-          <div class="prose">
-            <p>
-              Não há um catálogo rígido de serviços: a z-one atua na construção de
-              produtos e automações com IA, do desenho à entrega, com especificação
-              clara e ciclos iterativos.
-            </p>
-            <ul class="feature-list">
-              <li>Desenvolvimento de software e produtos digitais</li>
-              <li>Automação de fluxos com agentes e integrações</li>
-              <li>Orquestração de times de IA (z-team) com MCP e observabilidade</li>
-            </ul>
-          </div>
+          <h3 class="oficio-title">Ofício</h3>
+          <ul class="card-grid">
+            <li class="card">
+              <span class="card-kind">Jogo autoral</span>
+              <h3>Neon Maze</h3>
+              <p>Labirinto neon, inimigos de cristal e áudio sintetizado.</p>
+              <a
+                class="card-link mono"
+                href="https://github.com/zee-dash-one/neon-maze"
+                title="https://github.com/zee-dash-one/neon-maze"
+                aria-label="Repositório do Neon Maze: https://github.com/zee-dash-one/neon-maze"
+                rel="noopener noreferrer"
+                >Repositório</a
+              >
+            </li>
+            <li class="card">
+              <span class="card-kind">Jogo autoral</span>
+              <h3>Cubu Dash</h3>
+              <p>O jogador fica parado e o mundo corre na direção dele. Só pular e dash.</p>
+              <a
+                class="card-link mono"
+                href="https://github.com/zee-dash-one/cubu-dash"
+                title="https://github.com/zee-dash-one/cubu-dash"
+                aria-label="Repositório do Cubu Dash: https://github.com/zee-dash-one/cubu-dash"
+                rel="noopener noreferrer"
+                >Repositório</a
+              >
+            </li>
+            <li class="card">
+              <span class="badge">Pré-produção</span>
+              <span class="card-kind">Jogo autoral</span>
+              <h3>Ikarus <span class="card-sub">Eternal Horizon</span></h3>
+              <p>Corrida espacial que recomeça a cada queda.</p>
+              <a
+                class="card-link mono"
+                href="https://github.com/zee-dash-one/Ikarus-eternal-horizon"
+                title="https://github.com/zee-dash-one/Ikarus-eternal-horizon"
+                aria-label="Repositório do Ikarus: https://github.com/zee-dash-one/Ikarus-eternal-horizon"
+                rel="noopener noreferrer"
+                >Repositório</a
+              >
+            </li>
+          </ul>
+          <p class="co-criacao">
+            Bellspretty e Homeschooling — co-criação, ainda sem página pública.
+          </p>
         </div>
       </section>
 
@@ -204,22 +254,66 @@
         <div class="container">
           <div class="section-head">
             <span class="section-id mono">04</span>
-            <h2>Presença</h2>
+            <h2>Contato</h2>
           </div>
+          <p class="contact-intro">Escolha um canal e descreva o problema.</p>
           <ul class="contact-list">
             <li>
               <span class="contact-label mono">Instagram</span>
-              <a href="https://www.instagram.com/zeedashone/" rel="noopener noreferrer"
-                >@zeedashone</a
+              <a
+                href="https://ig.me/m/zeedashone"
+                title="https://www.instagram.com/zeedashone/"
+                aria-label="Mensagem no Instagram · @zeedashone. Reserva: https://www.instagram.com/zeedashone/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Mensagem no Instagram · @zeedashone</a
               >
             </li>
             <li>
-              <span class="contact-label mono">Fundador</span>
-              <a href="https://www.linkedin.com/in/hilderney/" rel="noopener noreferrer"
-                >Hilderney no LinkedIn</a
-              >
+              <span class="contact-label mono">WhatsApp</span>
+              <span>Número ainda não publicado.</span>
+            </li>
+            <li>
+              <span class="contact-label mono">E-mail</span>
+              <a href="#ficha-contato">Escrever por e-mail</a>
             </li>
           </ul>
+          <div id="ficha-contato" class="ficha">
+            <form class="ficha-form" data-contact-form novalidate>
+              <label>
+                Nome
+                <input type="text" name="name" autocomplete="name" />
+              </label>
+              <label>
+                E-mail
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <p class="form-error" data-error="email" hidden>Esse e-mail não parece válido.</p>
+              <label>
+                Telefone
+                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" />
+              </label>
+              <p class="form-error" data-error="phone" hidden>
+                Telefone incompleto. Use DDD e número.
+              </p>
+              <label>
+                Mensagem
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Qual problema você quer resolver?"
+                ></textarea>
+              </label>
+              <p class="form-status" data-form-status hidden>
+                Não enviou. Tente de novo ou fale pelo Instagram.
+              </p>
+              <button class="btn btn--primary" type="submit">Enviar</button>
+            </form>
+            <p class="form-success" data-form-success hidden>
+              Mensagem enviada. A z-one responde no e-mail informado.
+            </p>
+          </div>
         </div>
       </section>
     </main>
