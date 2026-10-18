@@ -6,6 +6,56 @@
 
   const toggle = document.querySelector("[data-nav-toggle]");
   const nav = document.querySelector("[data-nav]");
+  const ruler = document.querySelector(".header-ruler");
+  const rulerLeft = document.querySelector("[data-ruler-left]");
+  const rulerRight = document.querySelector("[data-ruler-right]");
+  const sectionOrder = [
+    ["sobre", "01"],
+    ["servicos", "02"],
+    ["projetos", "03"],
+    ["contato", "04"],
+  ];
+
+  function setCurrentSection(id) {
+    if (nav) {
+      nav.querySelectorAll("a").forEach((link) => {
+        if (id && link.getAttribute("href") === "#" + id) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
+    const match = sectionOrder.find(([sectionId]) => sectionId === id);
+    if (!match) {
+      if (ruler) ruler.removeAttribute("data-section");
+      if (rulerLeft) rulerLeft.textContent = "00";
+      if (rulerRight) rulerRight.textContent = "";
+      return;
+    }
+    const index = sectionOrder.indexOf(match);
+    if (ruler) ruler.setAttribute("data-section", String(index + 1));
+    if (rulerLeft) rulerLeft.textContent = "00";
+    if (rulerRight) rulerRight.textContent = "SYS " + match[1];
+  }
+
+  function updateCurrentSection() {
+    const stack = Number.parseFloat(
+      getComputedStyle(document.documentElement).scrollPaddingTop
+    );
+    const line = (Number.isFinite(stack) ? stack : 0) + 8;
+    let current = null;
+    sectionOrder.forEach(([sectionId]) => {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      if (section.getBoundingClientRect().top <= line) current = sectionId;
+    });
+    setCurrentSection(current);
+  }
+
+  updateCurrentSection();
+  window.addEventListener("scroll", updateCurrentSection, { passive: true });
+  window.addEventListener("resize", updateCurrentSection);
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {

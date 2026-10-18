@@ -150,6 +150,11 @@ textarea:focus-visible {
   color: var(--text);
 }
 
+.site-nav a[aria-current="true"] {
+  color: var(--text);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
 .nav-toggle {
   display: none;
   background: transparent;
@@ -193,6 +198,28 @@ textarea:focus-visible {
   width: 2.5rem;
   height: 3px;
   background: var(--accent);
+  transition: left var(--motion-duration) var(--motion-ease),
+    right var(--motion-duration) var(--motion-ease);
+}
+
+.header-ruler[data-section="1"] .ruler-accent {
+  left: 4%;
+  right: auto;
+}
+
+.header-ruler[data-section="2"] .ruler-accent {
+  left: 28%;
+  right: auto;
+}
+
+.header-ruler[data-section="3"] .ruler-accent {
+  left: 52%;
+  right: auto;
+}
+
+.header-ruler[data-section="4"] .ruler-accent {
+  left: 76%;
+  right: auto;
 }
 
 .ruler-label {
