@@ -278,7 +278,42 @@
               <a href="#ficha-contato">Escrever por e-mail</a>
             </li>
           </ul>
-          <div id="ficha-contato" class="ficha"></div>
+          <div id="ficha-contato" class="ficha">
+            <form class="ficha-form" data-contact-form novalidate>
+              <label>
+                Nome
+                <input type="text" name="name" autocomplete="name" />
+              </label>
+              <label>
+                E-mail
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <p class="form-error" data-error="email" hidden>Esse e-mail não parece válido.</p>
+              <label>
+                Telefone
+                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" />
+              </label>
+              <p class="form-error" data-error="phone" hidden>
+                Telefone incompleto. Use DDD e número.
+              </p>
+              <label>
+                Mensagem
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Qual problema você quer resolver?"
+                ></textarea>
+              </label>
+              <p class="form-status" data-form-status hidden>
+                Não enviou. Tente de novo ou fale pelo Instagram.
+              </p>
+              <button class="btn btn--primary" type="submit">Enviar</button>
+            </form>
+            <p class="form-success" data-form-success hidden>
+              Mensagem enviada. A z-one responde no e-mail informado.
+            </p>
+          </div>
         </div>
       </section>
     </main>
