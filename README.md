@@ -2,12 +2,12 @@
 
 Landing page estática da **z-one** (serviços de TI e automação com IA), publicada via GitHub Pages.
 
-**URL prevista:** [https://hilderney.github.io/z-one-page/](https://hilderney.github.io/z-one-page/)
+**URL prevista:** [https://zee-dash-one.github.io/z-one-page/](https://zee-dash-one.github.io/z-one-page/)
 
 ## Conteúdo
 
 - Hero com logotipo e posicionamento
-- Projetos (Devotio, Pac-Man game, Ikarus, Cubu Dash, z-team, Bellspretty e Homeschooling em breve)
+- Projetos (z-team, Devotio, Neon Maze, Cubu Dash, Ikarus Eternal Horizon — repositórios em [zee-dash-one](https://github.com/zee-dash-one); Bellspretty e Homeschooling em breve)
 - Atuação (produtos e automação com IA, z-team / MCP)
 - Instagram [@zeedashone](https://www.instagram.com/zeedashone/)
 
