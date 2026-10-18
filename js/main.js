@@ -58,16 +58,61 @@
   window.addEventListener("resize", updateCurrentSection);
 
   if (toggle && nav) {
+    const label = toggle.querySelector(".nav-toggle-label");
+    const menuLinks = () => [...nav.querySelectorAll("a")];
+
+    function menuIsOverlay() {
+      return getComputedStyle(toggle).display !== "none";
+    }
+
+    function closeMenu(restoreFocus) {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      if (label) label.textContent = "Menu";
+      if (restoreFocus) toggle.focus();
+    }
+
+    function openMenu() {
+      nav.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      if (label) label.textContent = "Fechar";
+      const first = menuLinks()[0];
+      if (first) first.focus();
+    }
+
     toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (nav.classList.contains("is-open")) closeMenu(false);
+      else openMenu();
     });
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        closeMenu(false);
       });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!nav.classList.contains("is-open") || !menuIsOverlay()) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu(true);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const links = menuLinks();
+      if (!links.length) return;
+      const first = links[0];
+      const last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      } else if (!nav.contains(document.activeElement) && document.activeElement !== toggle) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      }
     });
   }
 

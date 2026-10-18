@@ -651,7 +651,7 @@ textarea:focus-visible {
 
   .site-nav {
     position: absolute;
-    top: var(--header-h);
+    top: var(--header-stack);
     left: 0;
     right: 0;
     background: var(--bg);
